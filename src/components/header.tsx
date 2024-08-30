@@ -12,6 +12,7 @@ import { RussianFlag } from '../icon/russian-flag';
 import { Button } from './ui/button';
 import { User } from '@/icon/user';
 import Link from 'next/link';
+import { nanoid } from 'nanoid';
 
 export const Header = () => {
     const [selectedFlag, setSelectedFlag] = useState<JSX.Element>(<UzbekFlag />);
@@ -42,6 +43,7 @@ export const Header = () => {
                 <div className='flex items-center justify-center gap-4 border-2 border-gray-300 w-52 h-12 rounded-l-xl'>
                     <Manu />
                     <Select
+                    key={nanoid()}
                         options={options2}
                         className='w-24'
                     />
@@ -58,7 +60,7 @@ export const Header = () => {
                     <div className=' flex items-center justify-center'>
                         {selectedFlag}
                     </div>
-                    <Select options={options} className='w-[70px]' onChange={handleSelectChange} />
+                    <Select options={options} key={nanoid()} className='w-[70px]' onChange={handleSelectChange} />
                 </div>
                 <Link href={"/about"}><Button startIcon={<User />} type='button' className='flex w-[120px] h-[50px] text-white items-center justify-center rounded-lg bg-blue-600'>Кириш</Button>
                 </Link>

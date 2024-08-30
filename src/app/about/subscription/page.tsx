@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Select } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
+import { nanoid } from 'nanoid/non-secure';
 
 const Subscription = () => {
   const options = [
@@ -35,6 +36,7 @@ const Subscription = () => {
           <div className='mt-5'>
             <h1>Обуна давом этиш вакти</h1>
             <Select 
+            key={nanoid()}
               options={options} 
               value={selectedOption} 
               onChange={handleSelectChange} 
@@ -44,6 +46,7 @@ const Subscription = () => {
           <div className='mt-5 py-3'>
             <h1 >Булимни танланг</h1>
             <Select 
+                
               options={options2} 
               value={selectedOption} 
               onChange={handleSelectChange} 

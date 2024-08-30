@@ -5,9 +5,10 @@ interface SelectProps {
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
   value?: string;
   className:string
+
 }
 
-export const Select: FC<SelectProps> = ({ options, onChange, value, className }) => {
+export const Select: FC<SelectProps> = ({ options, onChange, value,  className }) => {
   return (
     <select value={value} onChange={onChange} className={className}>
       {options.map((option) => (
